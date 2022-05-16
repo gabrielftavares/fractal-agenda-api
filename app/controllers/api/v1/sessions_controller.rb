@@ -3,7 +3,7 @@ class Api::V1::SessionsController < ApplicationController
     @user = User.where(email: params[:email]).first
 
     if @user&.valid_password?(params[:password])
-      @current_user = @user
+      sign_in(@user)
       render json: @user.as_json(only: %i[email authentication_token]), status: :created
     else
       head(:unauthorized)

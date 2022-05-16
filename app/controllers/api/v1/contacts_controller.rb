@@ -1,5 +1,5 @@
 class Api::V1::ContactsController < Api::V1::BaseController
-  before_action :set_contact, only: %i[show update]
+  before_action :set_contact, only: %i[show update destroy]
 
   def index
     @contacts = Contact.all
@@ -24,7 +24,10 @@ class Api::V1::ContactsController < Api::V1::BaseController
     end
   end
 
-  def destroy; end
+  def destroy
+    @contact.destroy
+    head :no_content
+  end
 
   private
 

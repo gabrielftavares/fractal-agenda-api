@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.7'
 # Devise for users
 gem 'devise'
 
+# Authorization gem
+gem 'pundit'
+
 # Generate token auth process
 gem 'simple_token_authentication'
 

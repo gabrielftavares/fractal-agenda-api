@@ -6,6 +6,6 @@ class ContactTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     post "/api/v1/contacts"
-      params: {"contact": { "name": 'João', "relation": 'personal', "user": user}}
+      # params: {"contact": { "name": 'João', "relation": 'personal', "user": user}}
   end
 end

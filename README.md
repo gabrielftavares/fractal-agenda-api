@@ -2,6 +2,8 @@
 
 Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` padrão para gerenciar sem contatos.
 
+### [Diagrama do Banco de Dados](https://dbdiagram.io/d/628418a17f945876b639bc23)
+
 ## Create a new account
 
 ### Request

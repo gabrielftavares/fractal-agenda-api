@@ -3,7 +3,13 @@ class Api::V1::ContactsController < Api::V1::BaseController
   before_action :set_contact, only: %i[show update destroy]
 
   def index
-    @contacts = Contact.all
+    @user = User.where(email: params[:email]).first
+    if @user&.valid_password?(params[:password])
+      sign_in(@user)
+      @contacts = Contact.where(user: @user)
+    else
+      render json: { message: "You must be logged in or create an account to see your contacts" }, status: :ok
+    end
   end
 
   def show; end
@@ -27,8 +33,11 @@ class Api::V1::ContactsController < Api::V1::BaseController
   end
 
   def destroy
-    @contact.destroy
-    head :no_content
+    if @contact.destroy
+      head(:ok)
+    else
+      head(:unprocessable_entity)
+    end
   end
 
   private

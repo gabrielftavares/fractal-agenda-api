@@ -17,7 +17,7 @@ class Api::V1::ContactsController < Api::V1::BaseController
     @contact.user = current_user
     authorize @contact
     if @contact.save
-      head(:created)
+      render json: { contact: @contact }, status: :created
     else
       render_error
     end
@@ -25,7 +25,7 @@ class Api::V1::ContactsController < Api::V1::BaseController
 
   def update
     if @contact.update(contact_params)
-      head(:ok)
+      render json: { contact: @contact }, status: :ok
     else
       render_error
     end

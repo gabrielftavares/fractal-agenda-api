@@ -1,4 +1,5 @@
 class Api::V1::ContactsController < Api::V1::BaseController
+  acts_as_token_authentication_handler_for User, except: %i[index show]
   before_action :set_contact, only: %i[show update destroy]
 
   def index
@@ -9,6 +10,7 @@ class Api::V1::ContactsController < Api::V1::BaseController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.user = current_user
     if @contact.save
       render :show, status: :created
     else

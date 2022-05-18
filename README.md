@@ -11,7 +11,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
 `POST /api/v1/registrations`
 
     curl -d '{ "user": { "name": "John Doe", "email": "testman@gmail.com", "password": "Htx7H9" } }' \
-          http://localhost:3000/api/v1/contacts
+          http://localhost:3000/api/v1/registrations
 
 ### Response
 
@@ -63,6 +63,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
      -H 'X-User-Email: testeman@gmail.com'                                                                    \
      -H 'X-User-Token: a6hYpzsfNJdYC6zEMxs3'                                                                  \
      -d '{ "contact": { "name": "Steve Jobs", "relation": "personal", "phone_number": "(555) 555-1234" } }'   \
+     http://localhost:3000/api/v1/contacts
 
 ### Response
 

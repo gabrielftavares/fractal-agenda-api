@@ -1,10 +1,10 @@
 # Fractal - Agenda API
 
-Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` padrão para gerenciar sem contatos.
+Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` padrão para gerenciar seus contatos.
 
 ### [Diagrama do Banco de Dados](https://dbdiagram.io/d/628418a17f945876b639bc23)
 
-## Create a new account
+## Criar uma nova conta
 
 ### Request
 
@@ -24,7 +24,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
       "authentication_token": "RLs2J_s-xmu9AmZ9H5UY"
     }
 
-## List your contacts
+## Listar seus Contatos
 ### Request
 
 `GET /api/v1/contacts`
@@ -52,7 +52,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
      ]
     }
 
-## Create a new Contact
+## Criar um novo Contato
 
 ### Request
 
@@ -86,7 +86,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
       }
     }
 
-## Update a Contact
+## Atualizar um Contato
 
 ### Request
 
@@ -120,7 +120,7 @@ Com essa API é possível criar uma conta na aplicação e realizar o `CRUD` pad
       }
     }
 
-## Delete a Contact
+## Deletar um Contato
 
 ### Request
 
